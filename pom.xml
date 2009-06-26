@@ -4,7 +4,7 @@
 	<groupId>com.codahale</groupId>
 	<artifactId>jdbc-perf-wrapper</artifactId>
 	<name>JDBC Performance Wrapper</name>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 	<description>
 		A wrapper for JDBC connections which keeps track of the
 		amount of time each thread spends performing database queries.
@@ -39,6 +39,12 @@
 			<url>COPYING.txt</url>
 		</license>
 	</licenses>
+	<distributionManagement>
+		<repository>
+			<id>repo.codahale.com</id>
+			<url>scp://codahale.com/home/codahale/repo.codahale.com</url>
+		</repository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
