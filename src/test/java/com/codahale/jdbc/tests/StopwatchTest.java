@@ -22,17 +22,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 public class StopwatchTest {
-	@Before
-	@After
-	public void resetCounter() throws Exception {
-		Stopwatch.getInstance().reset();
-	}
-	
-	private long seconds(int seconds) {
+	public static long seconds(int seconds) {
 		return seconds * 100;
 	}
 	
-	private Matcher<Long> roughly(final int seconds) {
+	public static Matcher<Long> roughly(final int seconds) {
 		return new BaseMatcher<Long>() {
 			@Override
 			public boolean matches(Object o) {
@@ -48,6 +42,12 @@ public class StopwatchTest {
 				description.appendText("~" + seconds + "s");
 			}
 		};
+	}
+	
+	@Before
+	@After
+	public void resetCounter() throws Exception {
+		Stopwatch.getInstance().reset();
 	}
 	
 	@Test
