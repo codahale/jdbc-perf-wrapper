@@ -75,6 +75,10 @@ public class Instrumenter implements InvocationHandler {
 
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		if (method.getName().equals("getOriginalClass")) {
+			return object.getClass();
+		}
+		
 		final boolean isTimed = TIMED_METHODS.contains(method.getName());
 
 		if (isTimed) {

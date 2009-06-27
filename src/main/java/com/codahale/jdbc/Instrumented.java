@@ -8,5 +8,5 @@ package com.codahale.jdbc;
  *
  */
 public interface Instrumented {
-	// nothing to see here
+	public abstract Class<?> getOriginalClass();
 }

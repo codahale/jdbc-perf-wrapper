@@ -32,7 +32,7 @@ import com.codahale.jdbc.Instrumenter;
 
 @RunWith(Enclosed.class)
 public class InstrumenterTest {
-	private static Matcher<Object> instrumented() {
+	public static Matcher<Object> instrumented() {
 			return new BaseMatcher<Object>() {
 				@Override
 				public boolean matches(Object object) {
